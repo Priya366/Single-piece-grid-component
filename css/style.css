@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap');
+*,
+::before,
+::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --fs-body: 1rem;
+    --bg-clr-commnunity-section: hsl(204, 43%, 93%);
+    --bg-clr-body: hsla(216, 22%, 67%);
+    --bg-clr-button: hsl(71, 73%, 54%);
+    --bg-color-subscription-section: hsl(179, 62%, 43%);
+    --bg-color-about-section: hsl(179, 62%, 43%, 0.55);
+    --clr-body-text: hsla(0, 0%, 100%, 0.85);
+    --clr-stat-analysis-text: hsla(0, 0%, 100%, 0.6);
+    --ff-primary: 'Karla', sans-serif;
+    --fw-light: 400;
+    --fw-bold: 700;
+}
+
+
+/* TYPOGRAPHY  */
+
+h1,
+h2,
+h3,
+a,
+p {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+.community h1 {
+    color: var(--bg-color-subscription-section);
+    font-weight: var(--fw-bold);
+}
+
+.colored-heading {
+    color: var(--bg-clr-button);
+    font-weight: var(--fw-bold);
+    margin: 0.4em 0 0.2em;
+    text-shadow: 0.7px 0.7px 0.99px yellow;
+    font-size: 1.2rem;
+}
+
+.info {
+    color: hsl(0, 0%, 0%, 0.40);
+}
+
+.subscription h3 {
+    font-size: 1.8rem;
+    font-weight: var(--fw-bold);
+    color: hsl(0, 0%, 100%);
+    margin-top: 0.25em;
+    margin-bottom: 0.15em;
+}
+
+.faded-text {
+    margin-left: 0.3em;
+    color: hsl(0, 0%, 100%, 0.50);
+    font-size: 1.1rem;
+}
+
+.subscription p {
+    color: var(--clr-body-text);
+}
+
+.about p {
+    color: hsl(0, 0%, 100%, 0.60);
+    margin-top: 0.7em;
+}
+
+
+/* GENERAL STYLING  */
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;
+    font-family: var(--ff-primary);
+    font-weight: var(--fw-light);
+    font-size: var(--fs-body);
+    line-height: 1.5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--bg-clr-body);
+    border-radius: 0.2rem;
+}
+
+button {
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    margin-top: 1.7em;
+    padding: 0.9em 0.5em;
+    font-size: var(--fs-body);
+    background-color: var(--bg-clr-button);
+    border: none;
+    border-radius: 0.2rem;
+    color: hsl(0, 0%, 100%);
+    font-weight: var(--fw-bold);
+    box-shadow: 0.3px 0.3px 9px 0.5px hsl(0, 0%, 0%, 0.26);
+}
+
+button:hover {
+    background-color: transparent;
+    border: 2px solid hsl(0, 0%, 100%);
+}
+
+
+/* GRID CONTAINER  */
+
+.grid-container {
+    max-width: 900px;
+    width: 90%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    box-shadow: 0.3px 0.3px 9px 1px hsl(0, 0%, 0%, 0.26);
+}
+
+.community {
+    border-top-left-radius: 0.4rem;
+    padding: 2em;
+    border-top-right-radius: 0.4rem;
+    grid-column: span 2;
+    background-color: var(--bg-clr-commnunity-section);
+}
+
+.subscription {
+    border-bottom-left-radius: 0.4rem;
+    padding: 2em;
+    background-color: var(--bg-color-subscription-section);
+    color: var(--clr-body-text);
+}
+
+.about {
+    border-bottom-right-radius: 0.4rem;
+    padding: 2em;
+    box-shadow: inset 0.3px 0 3px 0 hsl(0, 0%, 100%, 0.60);
+    background-color: var(--bg-color-about-section);
+    color: var(--clr-body-text);
+}
+
+
+/* MEDIA QUERIES FOR mobiles and tablets */
+
+@media (max-width: 681px) {
+    /* TYPOGRAPHY  */
+    .info {
+        margin-top: 0.8em;
+    }
+    /* Grid-container styling  */
+    .grid-container {
+        grid-template-columns: repeat(1, 1fr);
+        margin: 5px auto;
+    }
+    .community {
+        grid-column: span 1;
+    }
+    .subscription {
+        border-radius: 0;
+    }
+    .about {
+        border-bottom-right-radius: 0.4rem;
+        border-bottom-left-radius: 0.4rem;
+    }
+}
